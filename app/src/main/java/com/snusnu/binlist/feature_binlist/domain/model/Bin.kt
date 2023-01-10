@@ -10,9 +10,10 @@ data class Bin(
     val scheme: String? = null,
     val brand: String? = null,
     val type: String? = null,
-    val prepaid: String? = null,
+    val prepaid: Boolean? = null,
     val country: String? = null,
     val latitude: Int? = null,
     val longitude: Int? = null,
-    val bank: String? = null
+    val bank: String? = null,
+    val phone: String? = null
 )
