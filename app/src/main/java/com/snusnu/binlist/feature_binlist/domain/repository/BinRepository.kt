@@ -5,7 +5,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface BinRepository {
 
-    fun getBins(): Flow<List<Bin>>
+    fun getBinsFromRoom(): Flow<List<Bin>>
+
+    suspend fun getBinsFromNetwork(bin: Int): Bin
 
     suspend fun insertBin(bin: Bin)
 }

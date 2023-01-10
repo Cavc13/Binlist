@@ -1,4 +1,4 @@
-package com.snusnu.binlist.feature_binlist.network.dto
+package com.snusnu.binlist.feature_binlist.data.network.dto
 
 data class CountryDto(
     val alpha2: String,

@@ -1,11 +1,11 @@
-package com.snusnu.binlist.feature_binlist.network.api
+package com.snusnu.binlist.feature_binlist.data.network.api
 
-import com.snusnu.binlist.feature_binlist.network.dto.ResponseDto
+import com.snusnu.binlist.feature_binlist.data.network.dto.ResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface BinlistApi {
+interface BinApi {
 
     @GET("/")
     suspend fun getBin(
