@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Binlist"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".feature_binlist.presentation.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

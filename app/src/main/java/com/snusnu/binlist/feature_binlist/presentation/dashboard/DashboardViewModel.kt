@@ -1,4 +1,4 @@
-package com.snusnu.binlist.ui.dashboard
+package com.snusnu.binlist.feature_binlist.presentation.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

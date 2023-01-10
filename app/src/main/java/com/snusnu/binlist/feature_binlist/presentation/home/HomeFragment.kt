@@ -1,4 +1,4 @@
-package com.snusnu.binlist.ui.home
+package com.snusnu.binlist.feature_binlist.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
