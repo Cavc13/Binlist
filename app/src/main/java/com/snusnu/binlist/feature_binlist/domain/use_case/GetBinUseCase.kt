@@ -6,5 +6,5 @@ class GetBinUseCase(
     private val repository: BinRepository
 ) {
 
-    suspend operator fun invoke(binNumber: Int) = repository.getBinsFromNetwork(binNumber)
+    suspend operator fun invoke(binNumber: String) = repository.getBinsFromNetwork(binNumber)
 }

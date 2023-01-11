@@ -1,5 +1,6 @@
 package com.snusnu.binlist.feature_binlist.data.repository
 
+import android.util.Log
 import com.snusnu.binlist.feature_binlist.data.data_source.BinDao
 import com.snusnu.binlist.feature_binlist.data.network.api.BinApi
 import com.snusnu.binlist.feature_binlist.domain.model.Bin
@@ -15,7 +16,7 @@ class BinlistRepositoryImpl(
         return dao.getBins()
     }
 
-    override suspend fun getBinsFromNetwork(bin: Int): Bin {
+    override suspend fun getBinsFromNetwork(bin: String): Bin {
         val response = api.getBin(bin).body()
 
         return Bin(
@@ -23,12 +24,16 @@ class BinlistRepositoryImpl(
             response?.scheme,
             response?.brand,
             response?.type,
-            response?.prepaid,
+            response?.prepaid ?: false,
             response?.countryDto?.name,
             response?.countryDto?.latitude,
             response?.countryDto?.longitude,
             response?.bankDto?.name,
-            response?.bankDto?.phone
+            response?.bankDto?.city,
+            response?.bankDto?.url,
+            response?.bankDto?.phone,
+            response?.numberDto?.length,
+            response?.numberDto?.luhn ?: false
         )
     }
 

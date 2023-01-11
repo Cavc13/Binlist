@@ -6,7 +6,8 @@ import com.snusnu.binlist.feature_binlist.domain.model.Bin
 
 @Database(
     entities = [Bin::class],
-    version = 1
+    version = 3,
+    exportSchema = false
 )
 abstract class BinDatabase : RoomDatabase() {
     abstract val binDao: BinDao

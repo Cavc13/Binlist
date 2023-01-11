@@ -2,6 +2,8 @@ package com.snusnu.binlist.di
 
 import android.app.Application
 import androidx.room.Room
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.snusnu.binlist.feature_binlist.data.data_source.BinDatabase
 import com.snusnu.binlist.feature_binlist.data.network.api.BinApi
 import com.snusnu.binlist.feature_binlist.data.repository.BinlistRepositoryImpl
@@ -16,6 +18,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import javax.inject.Singleton
 
 @Module
@@ -29,15 +32,18 @@ object AppModule {
             app,
             BinDatabase::class.java,
             BinDatabase.DATABASE_NAME
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides
     @Singleton
-    fun provideBinRetrofit(): BinApi =
+    fun provideBinRetrofit() =
         Retrofit.Builder()
             .baseUrl(BIN_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create(BinApi::class.java)
 
@@ -57,5 +63,5 @@ object AppModule {
         )
     }
 
-    const val BIN_URL = "https://lookup.binlist.net"
+    const val BIN_URL = "https://lookup.binlist.net/"
 }
