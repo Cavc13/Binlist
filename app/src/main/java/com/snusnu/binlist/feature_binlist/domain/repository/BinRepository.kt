@@ -7,7 +7,7 @@ interface BinRepository {
 
     fun getBinsFromRoom(): Flow<List<Bin>>
 
-    suspend fun getBinsFromNetwork(bin: Int): Bin
+    suspend fun getBinsFromNetwork(bin: String): Bin
 
     suspend fun insertBin(bin: Bin)
 }

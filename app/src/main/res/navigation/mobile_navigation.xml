@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.snusnu.binlist.feature_binlist.presentation.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_bin_list"
+        android:name="com.snusnu.binlist.feature_binlist.presentation.binlist.BinListFragment"
+        android:label="@string/title_bin_list"
+        tools:layout="@layout/fragment_bin_list" />
 </navigation>

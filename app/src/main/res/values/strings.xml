@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">Binlist</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_bin_list">List</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_question">\?</string>
+    <string name="text_title_scheme_network">SCHEME / NETWORK</string>
+    <string name="text_title_type">TYPE</string>
+    <string name="text_title_brand">BRAND</string>
+    <string name="text_title_prepaid">PREPAID</string>
+    <string name="text_title_card_number">CARD NUMBER</string>
+    <string name="text_title_length">LENGTH</string>
+    <string name="text_title_luhn">LUHN</string>
+    <string name="text_title_country">COUNTRY</string>
+    <string name="text_title_bank">BANK</string>
+    <string name="text_yes_no">Yes / No</string>
+    <string name="text_bold_yes_no"><b>YES</b> / No</string>
+    <string name="text_yes_bold_no">Yes / <b>NO</b></string>
+    <string name="text_latitude_longitude">(latitude: ?, longitude: ?)</string>
 </resources>
