@@ -1,6 +1,5 @@
 package com.snusnu.binlist.feature_binlist.data.repository
 
-import android.util.Log
 import com.snusnu.binlist.feature_binlist.data.data_source.BinDao
 import com.snusnu.binlist.feature_binlist.data.network.api.BinApi
 import com.snusnu.binlist.feature_binlist.domain.model.Bin
