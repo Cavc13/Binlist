@@ -3,9 +3,11 @@ package com.snusnu.binlist.feature_binlist.presentation.binlist.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.snusnu.binlist.R
 import com.snusnu.binlist.databinding.ItemBinBinding
 import com.snusnu.binlist.feature_binlist.domain.model.Bin
+import com.snusnu.binlist.feature_binlist.presentation.utils.ANSWER_NO
+import com.snusnu.binlist.feature_binlist.presentation.utils.EMPTY
+import com.snusnu.binlist.feature_binlist.presentation.utils.ANSWER_YES
 
 class BinAdapter : ListAdapter<Bin, BinViewHolder>(BinDiffCallback) {
 
@@ -24,21 +26,20 @@ class BinAdapter : ListAdapter<Bin, BinViewHolder>(BinDiffCallback) {
 
         with(holder.binding) {
             with(currentBin) {
-                tvScheme.text = scheme ?: "?"
-                tvType.text = type ?: "?"
-                tvBrand.text = brand ?: "?"
-                tvPrepaid.text = if(prepaid) "YES" else "NO"
+                tvScheme.text = scheme ?: EMPTY
+                tvType.text = type ?: EMPTY
+                tvBrand.text = brand ?: EMPTY
+                tvPrepaid.text = if(prepaid) ANSWER_YES else ANSWER_NO
                 tvLength.text = "$length"
-                tvLuhn.text = if(luhn) "YES" else "NO"
+                tvLuhn.text = if(luhn) ANSWER_YES else ANSWER_NO
                 tvCountry.text = country
-                tvLatitudeLongitude.text = if (longitude !=null || latitude != null)
-                    "(latitude: $latitude, longitude: $longitude)"
-                    else "(latitude: ?, longitude: ?)"
+                tvLatitude.text = if (latitude !=null) "$latitude" else EMPTY
+                tvLongitude.text = if (longitude !=null) "$longitude" else EMPTY
                 tvBank.text = if (bankName != null || bankCity != null)
                     "$bankName, $bankCity"
-                    else "?, ?"
-                tvUrl.text = url ?: "?"
-                tvPhone.text = phone ?: "?"
+                    else "$EMPTY, $EMPTY"
+                tvUrl.text = url ?: EMPTY
+                tvPhone.text = phone ?: EMPTY
             }
         }
     }

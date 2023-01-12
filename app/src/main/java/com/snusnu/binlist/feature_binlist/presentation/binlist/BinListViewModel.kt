@@ -26,7 +26,7 @@ class BinListViewModel @Inject constructor(
     fun getBinList() {
         viewModelScope.launch(Dispatchers.IO) {
             binUseCases.getBinList.invoke().collectLatest {
-                _binListFlow.value = it
+                _binListFlow.value = it.reversed()
             }
         }
     }
